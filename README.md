@@ -9,5 +9,5 @@ import { LangCode } from "https://code4fukui.github.io/LangCode/LangCode.js";
 
 console.log(await LangCode.encode("日本語"));
 console.log(await LangCode.decode("ja"));
-console.log(await LangICode.find("メ"));
+console.log(await LangCode.find("メ"));
 ``` 
