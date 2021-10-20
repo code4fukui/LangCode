@@ -18,7 +18,7 @@ class LangCode {
     const match = csv.filter(line => line[1].indexOf(s) >= 0);
     return match.map(m => m[1]);
   }
-  static async encode(s) {
+  static async _encode1(s) {
     const csv = await LangCode.init();
     const value = csv.find(line => line[1] == s);
     if (!value) {
@@ -26,13 +26,37 @@ class LangCode {
     }
     return value[0];
   }
-  static async decode(code) {
+  static async encode(code) {
+    const res = [];
+    const cs = code.split("、");
+    for (const c of cs) {
+      const r = await LangCode._encode1(c);
+      if (!r) {
+        return null;
+      }
+      res.push(r);
+    }
+    return res.join(";");
+  }
+  static async _decode1(code) {
     const csv = await LangCode.init();
     const value = csv.find(line => line[0] == code);
     if (!value) {
       return null;
     }
     return value[1];
+  }
+  static async decode(code) {
+    const res = [];
+    const cs = code.split(";");
+    for (const c of cs) {
+      const r = await LangCode._decode1(c);
+      if (!r) {
+        return null;
+      }
+      res.push(r);
+    }
+    return res.join("、");
   }
 }
 
