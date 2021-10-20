@@ -7,8 +7,8 @@ class LangCode {
     if (LangCode.csv) {
       return LangCode.csv;
     }
-    //const url = "https://code4fukui.github.io/LangCode/";
-    const url = "";
+    const url = "https://code4fukui.github.io/LangCode/";
+    //const url = "";
     const csv = await CSV.fetch(url + LangCode.fn);
     LangCode.csv = csv;
     return csv;
