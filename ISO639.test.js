@@ -25,7 +25,9 @@ Deno.test("find", async () => {
     "トルクメン語",
   ];
   t.assertEquals(await ISO639.find("メ"), expected);
+  t.assertEquals((await ISO639.find(""))[0], "アファル語");
 });
 Deno.test("all", async () => {
-  t.assertEquals((await ISO639.find("")).length, 487);
+  t.assertEquals((await ISO639.find("")).length, 486);
+  t.assertEquals((await ISO639.list()).length, 486);
 });

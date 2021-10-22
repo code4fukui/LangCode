@@ -20,15 +20,17 @@ class ISO639 {
   }
   static async find(s) {
     const csv = await this.init();
-    const match = csv.filter(line => {
+    const match = [];
+    for (let i = 1; i < csv.length; i++) {
+      const line = csv[i];
       for (const l of line) {
-        if (l.indexOf(s) >= 0) {
-          return true;
+        if (!s || l.indexOf(s) >= 0) {
+          match.push(line[this.nname]);
+          break;
         }
       }
-      return false;
-    });
-    return match.map(m => m[this.nname]);
+    }
+    return match;
   }
   static async _encode1(s) {
     const csv = await this.init();
@@ -69,6 +71,9 @@ class ISO639 {
       res.push(r);
     }
     return res.join("、");
+  }
+  static async list() {
+    return CSV.toJSON(this.csv);
   }
 }
 
