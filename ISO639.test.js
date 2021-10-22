@@ -5,6 +5,8 @@ Deno.test("encode", async () => {
   t.assertEquals(await ISO639.encode("日本語"), "jpn");
   t.assertEquals(await ISO639.encode("英語"), "eng");
   t.assertEquals(await ISO639.encode("日本語、英語"), "jpn;eng");
+  t.assertEquals(await ISO639.encode("韓国語"), "kor");
+  t.assertEquals(await ISO639.encode("朝鮮語"), "kor");
 });
 Deno.test("decode", async () => {
   t.assertEquals(await ISO639.decode("jpn"), "日本語");
@@ -12,6 +14,7 @@ Deno.test("decode", async () => {
   t.assertEquals(await ISO639.decode("eng;jpn"), "英語、日本語");
   t.assertEquals(await ISO639.decode("xx"), null);
   t.assertEquals(await ISO639.decode("zbl"), "ブリスシンポル");
+  t.assertEquals(await ISO639.decode("kor"), "韓国語；朝鮮語");
 });
 Deno.test("find", async () => {
   const expected = [

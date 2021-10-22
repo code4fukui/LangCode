@@ -34,7 +34,18 @@ class ISO639 {
   }
   static async _encode1(s) {
     const csv = await this.init();
-    const value = csv.find(line => line[this.nname] == s);
+    const value = csv.find(line => {
+      const name = line[this.nname];
+      if (name == s) {
+        return true;
+      }
+      if (name.indexOf("；")) {
+        if (name.split("；").indexOf(s) >= 0) {
+          return true;
+        }
+      }
+      return false;
+    });
     if (!value) {
       return null;
     }
