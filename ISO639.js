@@ -1,6 +1,11 @@
 import { CSV } from "https://js.sabae.cc/CSV.js";
 
 class ISO639 {
+  static url = "https://code4fukui.github.io/LangCode/"; // default
+  static setDataPath(url) {
+    this.url = url;
+  }
+
   static fn = "ISO639.csv";
   static csv = null;
   static nname = null;
@@ -9,9 +14,7 @@ class ISO639 {
     if (this.csv) {
       return this.csv;
     }
-    const url = "https://code4fukui.github.io/LangCode/";
-    //const url = "";
-    const csv = await CSV.fetch(url + this.fn);
+    const csv = await CSV.fetch(this.url + this.fn);
     this.csv = csv;
     const header = csv[0];
     this.nname = header.indexOf("lang_ja");
