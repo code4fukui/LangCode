@@ -9,7 +9,7 @@ https://code4fukui.github.io/LangCode/
 ## 機能
 
 - ISO639-1言語コードの検索・変換
-- ISO639言語コードの検索・変換
+- ISO639-2言語コードの検索・変換
 
 ## 使い方
 

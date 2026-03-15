@@ -1,5 +1,7 @@
 # LangCode
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 [LangCode](https://code4fukui.github.io/LangCode/) is a JavaScript library for encoding and decoding language names using ISO 639-1 and ISO 639-2 codes.
 
 ## Features
