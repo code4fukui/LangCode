@@ -32,4 +32,4 @@ console.log(await ISO639.find("メ"));
 - [ISO 639 Language Codes - CyberLibrarian](https://www.asahi-net.or.jp/~ax2s-kmtn/ref/iso639.html)
 
 ## License
-MIT
+MIT License — see [LICENSE](LICENSE).

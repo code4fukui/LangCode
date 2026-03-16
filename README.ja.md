@@ -2,10 +2,6 @@
 
 ISO639-1言語コードの簡単な検索・変換ライブラリです。
 
-## デモ
-
-https://code4fukui.github.io/LangCode/
-
 ## 機能
 
 - ISO639-1言語コードの検索・変換
