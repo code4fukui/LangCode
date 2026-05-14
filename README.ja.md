@@ -1,15 +1,13 @@
 # LangCode
 
-> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+[LangCode](https://code4fukui.github.io/LangCode/) は、ISO 639-1 および ISO 639-2 コードを用いて言語名のエンコードおよびデコードを行うJavaScriptライブラリです。
 
-[LangCode](https://code4fukui.github.io/LangCode/) is a JavaScript library for encoding and decoding language names using ISO 639-1 and ISO 639-2 codes.
+## 機能
+- 言語名とISO 639-1およびISO 639-2コード間のエンコード・デコード
+- 検索文字列に一致する言語名の検索
+- 複数言語のエンコード・デコードに対応
 
-## Features
-- Encode and decode language names to/from ISO 639-1 and ISO 639-2 codes
-- Find language names matching a search string
-- Supports multi-language encoding/decoding
-
-## Usage
+## 使い方
 
 ```js
 import { LangCode } from "https://code4fukui.github.io/LangCode/LangCode.js";
@@ -27,9 +25,9 @@ console.log(await ISO639.decode("jpn"));
 console.log(await ISO639.find("メ"));
 ```
 
-## Reference
+## 参考
 - [ISO639-1](https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7)
 - [ISO 639 Language Codes - CyberLibrarian](https://www.asahi-net.or.jp/~ax2s-kmtn/ref/iso639.html)
 
-## License
-MIT License — see [LICENSE](LICENSE).
+## ライセンス
+MIT License — 詳細は [LICENSE](LICENSE) を参照してください。
